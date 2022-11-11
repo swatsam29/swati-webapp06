@@ -1,5 +1,5 @@
 import {
-    getAuth, signInWithEmailAndPassword, SignOut, onAuthStateChanged, 
+    getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged, 
 } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js"
 
 import * as Elements from '../viewpage/elements.js'
@@ -32,7 +32,7 @@ export function addEventListeners() {
 
     Elements.MENU.SignOut.addEventListener('click', async () => {
         try {
-            await SignOut(auth);
+            await signOut(auth);
         } catch (e) {
             if (DEV) console.log(e);
             Util.info('Sign Out error', JSON.stringify(e));
