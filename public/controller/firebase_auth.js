@@ -1,5 +1,5 @@
 import {
-    getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged, 
+    getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js"
 
 import * as Elements from '../viewpage/elements.js'
@@ -7,7 +7,7 @@ import { DEV } from "../model/constants.js";
 import * as Util from '../viewpage/util.js'
 
 const auth = getAuth();
-export let currentUser= null;
+export let currentUser = null;
 
 export function addEventListeners() {
 
@@ -15,8 +15,8 @@ export function addEventListeners() {
 
     Elements.FormSignIn.addEventListener('submit', async e => {
         e.preventDefault();
-        const email = e.target.email;
-        const password = e.target.password;
+        const email = e.target.email.value;
+        const password = e.target.password.value;
         const button = e.target.getElementsByTagName('button')[0];
         const label = Util.disableButton(button);
 
