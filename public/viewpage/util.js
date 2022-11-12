@@ -1,25 +1,28 @@
-import { modalInfobox } from "./elements.js";
+import * as Elements from './elements.js';
 
-export function info(title, body, closeModal) {
+export function currency(value) {
+    return Intl.NumberFormat('en-US',{style: 'currency',currency:'USD'}).format(value);
+}
+
+export function info(tittle, body, closeModal){
     if (closeModal) closeModal.hide();
-    modalInfobox.title.innerHTML = title;
-    modalInfobox.body.innerHTML = body;
-    modalInfobox.modal.show();
+    Elements.modalInfobox.tittle.innerHTML = tittle;
+    Elements.modalInfobox.body.innerHTML = body;
+    Elements.modalInfobox.modal.show();
 }
 
 export function disableButton(button) {
     button.disabled = true;
-    const originalLabel = button.innerHTML;
+    const orginalLabel = button.innerHTML ; 
     button.innerHTML = 'Wait...';
-    return originalLabel;
+    return orginalLabel ;
 }
-
 export function enableButton(button, label) {
-    if (label) button.innerHTML = label;
-    button.disabled = false;
+    if (label) button.innerHTML = label ;
+    button.disabled = false ;
 }
-
 //from stackoverflow
 export function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
+    
 }
