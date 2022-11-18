@@ -4,9 +4,9 @@ export function currency(value) {
     return Intl.NumberFormat('en-US',{style: 'currency',currency:'USD'}).format(value);
 }
 
-export function info(tittle, body, closeModal){
+export function info(title, body, closeModal){
     if (closeModal) closeModal.hide();
-    Elements.modalInfobox.tittle.innerHTML = tittle;
+    Elements.modalInfobox.title.innerHTML = title;
     Elements.modalInfobox.body.innerHTML = body;
     Elements.modalInfobox.modal.show();
 }
