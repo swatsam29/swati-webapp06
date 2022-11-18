@@ -14,15 +14,24 @@ export const MENU = {
 export const formSignIn = document.getElementById('form-signin');
 
 export const modalInfobox = {
-    modal: new bootstrap.Modal(document.getElementById('modal-infobox'), {backdrop: 'static'}),
+    modal: new bootstrap.Modal(document.getElementById('modal-infobox'), { backdrop: 'static' }),
     title: document.getElementById('modal-infobox-title'),
     body: document.getElementById('modal-infobox-body')
 }
 
-export const modalTransaction ={
-    modal: new bootstrap.Modal(document.getElementById('modal-transaction'), {backdrop: 'static'}),
+export const modalTransaction = {
+    modal: new bootstrap.Modal(document.getElementById('modal-transaction'), { backdrop: 'static' }),
     title: document.getElementById('modal-transaction-title'),
     body: document.getElementById('modal-transaction-body'),
 }
 
-export const modalSignin = new bootstrap.Modal(document.getElementById('modal-signin-form'), {backdrop: 'static'});
+export const modalSignin = {
+    modal: new bootstrap.Modal(document.getElementById('modal-signin-form'), { backdrop: 'static' }),
+    form: document.getElementById('form-signin'),
+    showSignupModal: document.getElementById('button-show-signup-modal'),
+}
+export const modalSignup = {
+
+    modal: new bootstrap.Modal(document.getElementById('modal-signup'), { backdrop: 'static' }),
+    form: document.getElementById('modal-signup-form'),
+}
