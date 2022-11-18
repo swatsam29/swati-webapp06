@@ -5,6 +5,7 @@ import { currentUser } from "../controller/firebase_auth.js";
 import { currency, disableButton, enableButton,info } from "./util.js";
 import { home_page } from "./home_page.js";
 import { DEV } from "../model/constants.js";
+import { checkout } from "../controller/firestore_controller.js";
 
 export function addEventListeners() {
     MENU.Cart.addEventListener('click', async()=> {
@@ -80,7 +81,7 @@ export async function cart_page(){
         enableButton(checkoutButton,label);
         try{
             //chargning is done!!!!!
-            //save to firebase (await) part of lesson 3
+            await checkout(cart);
             info('Success!','Checkout Complete!');
             cart.clear();
             MENU.CartItemCount.innerHTML = 0;
