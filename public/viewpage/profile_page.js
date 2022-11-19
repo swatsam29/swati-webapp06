@@ -42,14 +42,14 @@ export async function profile_page(){
             <td width= "15%"> Name: </td>
             <td>
                 <input type="text" name="name" value="${accountInfo.name}" disabled required
-                placeholder="firstname lastname" pattern="^[A-Za-z][A-za-z|'|-| ]+">
+                placeholder="Firstname Lastname" pattern="^[A-Za-z][A-za-z|'|-| ]+">
             </td>
         <tr>
         <tr>
             <td width= "15%"> Address: </td>
             <td>
                 <input type="text" name="address" value="${accountInfo.address}" disabled required
-                placeholder="address" minlength="4">
+                placeholder="Address" minlength="4">
             </td>
         <tr>
         <tr>
@@ -79,7 +79,7 @@ export async function profile_page(){
             <td width= "15%"> Credit Card #: </td>
             <td>
                 <input type="text" name="creditNo" value="${accountInfo.creditNo}" disabled required
-                placeholder="credit card number" pattern="[0-9]+"minlength="15" maxlength="16">
+                placeholder="Credit card number" pattern="[0-9]+"minlength="15" maxlength="16">
             </td>
         <tr>
         
@@ -124,7 +124,7 @@ export async function profile_page(){
         try{
             const photoURL = await uploadProfilePhoto(photoFile,currentUser.uid);
             await updateAccountInfo(currentUser.uid,{photoURL});
-            account_info.photoURL = photoURL;
+            accountInfo.photoURL = photoURL;
             MENU.Profile.innerHTML = `
             <img src=" ${accountInfo.photoURL}" class="rounded-circle" height="30px">
         `;
